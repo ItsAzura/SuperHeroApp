@@ -1,0 +1,43 @@
+<resources>
+    <string name="app_name">Super Hero Application</string>
+
+    <string name="batmanName">BatMan</string>
+    <string name="batmanDesc">The superhero protector of Gotham City,  a tortured, brooding vigilante dressed as a bat who fights against evil and strikes fear into the hearts of criminals everywhere</string>
+    <string name="batmanPower">Low level superhuman strength, speed, and durability. Peace. Rich.</string>
+
+    <string name="blackadamName">Black Adam</string>
+    <string name="blackadamDesc">An ancient Egyptian named Teth-Adam, who is chosen by the wizard Shazam to be his successor due to his presumed moral purity.</string>
+    <string name="blackadamPower">Superhuman strength and speed, invulnerability, and flight</string>
+
+    <string name="deadpoolName">Deadpool</string>
+    <string name="deadpoolDesc">A disfigured Canadian mercenary with superhuman regenerative healing abilities.</string>
+    <string name="deadpoolPower">Accelerated healing factor.</string>
+
+    <string name="ghostriderName">Ghost Rider</string>
+    <string name="ghostriderDesc">A human who can transform into a skeletal superhuman wreathed in ethereal flame and given supernatural powers</string>
+    <string name="ghostriderPower">Superhuman speed, strength, durability, and a regenerative healing ability</string>
+
+    <string name="ironmanName">IronMan</string>
+    <string name="ironmanDesc">The superhero persona of Anthony Edward "Tony" Stark, a businessman and engineer who runs the company Stark Industries</string>
+    <string name="ironmanPower">Super strength, the ability to fly, durability, and a number of weapons</string>
+
+    <string name="moonknightName">Moon Knight</string>
+    <string name="moonknightDesc">Follows Steven Grant, a mild-mannered gift-shop employee, who becomes plagued with blackouts and memories of another life.</string>
+    <string name="moonknightPower">Enhanced strength during nights with full moons, prophetic visions and dreams, and the ability to drain another person is life energies through physical contact.</string>
+
+    <string name="professorxName">Professor X</string>
+    <string name="professorxDesc">A member of a subspecies of humans known as mutants, who are born with superhuman abilities</string>
+    <string name="professorxPower">Exceptionally powerful telepath, who can read and control the minds of others</string>
+
+    <string name="spidermanName">SpiderMan</string>
+    <string name="spidermanDesc">A poor sickly orphan, is bitten by a radioactive spider</string>
+    <string name="spidermanPower">Superhuman strength, agility, reflexes, stamina, durability, coordination, and balance, clinging to surfaces and ceilings like a spider, and detecting danger</string>
+
+    <string name="supermanName">SuperMan</string>
+    <string name="supermanDesc">He wears an outlandish costume, uses a codename, and fights evil with the aid of extraordinary abilities</string>
+    <string name="supermanPower">Strength, speed, stamina, agility, reflexes, longevity, senses, and durability Heat vision Wind and freeze breath Solar energy absorption X-ray vision Flight</string>
+
+    <string name="vemonName">Vemon</string>
+    <string name="vemonDesc">The poisonous secretion of an animal, produced by specialized glands that are often associated with spines, teeth, stings, or other piercing devices</string>
+    <string name="vemonPower">Scale buildings, take out bodies, and bust through walls</string>
+</resources>

@@ -23,6 +23,7 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.material3.Card
 import androidx.compose.material3.CenterAlignedTopAppBar
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -32,6 +33,7 @@ import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateListOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
@@ -62,29 +64,37 @@ class MainActivity : ComponentActivity() {
         }
     }
 }
-
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun HeroApp(){
-    var expanded by remember { mutableStateOf(false) }
+    val expandedList = remember { mutableStateListOf<Boolean>() }
+    //tạo 1 danh sách có thể thay đổi để chứa các giá trị kiểu boolean
+    for (i in superheroes.indices) {
+        expandedList.add(false)
+    }
+    //Tạo 1 vòng lặp đi qua từng phần tử trong list và thêm 1 giá trị false khi đi qua 1 phần tử
     Scaffold(
         topBar = {
             HeroTopBar()
         }
     ) {it ->
         LazyColumn(contentPadding = it) {
-            items(superheroes) {
+            itemsIndexed(superheroes) {index, superhero ->
+                //Lặp qua danh sách "superheroes", index mỗi phần tử superhero trong list còn superhero là giá trị
                 HeroItem(
-                    hero = it,
-                    expanded = expanded,
-                    onClick = { expanded = !expanded},
+                    hero = superhero,
+                    //hiện thị thông tin
+                    expanded = expandedList[index],
+                    //expand dựa trên  expandedList hiện tại
+                    onClick = { expandedList[index] = !expandedList[index] },
+                    //khi mỗi heroitem đc click thì  expandedList hiện tại chuyển từ false
+                    //Giúp có thể được mở rộng
                     modifier = Modifier.padding(8.dp)
                 )
             }
         }
     }
 }
-
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun HeroTopBar(
@@ -106,7 +116,6 @@ fun HeroTopBar(
         }
     )
 }
-
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun HeroItem(
@@ -121,13 +130,9 @@ fun HeroItem(
         Column(
             modifier = Modifier
                 .animateContentSize(
-                    //dùng để thay đổi kích thước nội dung mượt mà
                     animationSpec = spring(
-                        //xác định loại hiệu ứng
                         dampingRatio = Spring.DampingRatioNoBouncy,
-                        //xác định tham số tỷ lệ giảm dần của đợt nhảy
                         stiffness = Spring.StiffnessMedium
-                        //xác định độ cứng của đợt nhảy
                     )
                 )
         ){
@@ -169,7 +174,6 @@ fun HeroItem(
 
     }
 }
-
 @Composable
 fun HeroInfo(
     @StringRes heroName: Int,
@@ -193,7 +197,6 @@ fun HeroInfo(
         )
     }
 }
-
 @Composable
 fun HeroIcon(
     @DrawableRes heroIcon: Int,
@@ -215,7 +218,6 @@ fun HeroIcon(
         contentDescription =""
     )
 }
-
 @Composable
 fun HeroPower(
     @StringRes heroPower :Int,
